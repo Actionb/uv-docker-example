@@ -76,7 +76,10 @@ jobs:
           docker load --input /tmp/uv-docker-example-multistage.tar
           docker image ls -a
 
-      - name: Test command line
+      - name: Test command line without arguments
+        run: ./run.sh
+
+      - name: Test command line with arguments
         run: ./run.sh hello
 
       - name: Test Docker compose
