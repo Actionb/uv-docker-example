@@ -76,8 +76,8 @@ jobs:
           docker load --input /tmp/uv-docker-example-multistage.tar
           docker image ls -a
 
-      - name: Test command line without arguments
-        run: ./run.sh
+      - name: Check that FastAPI CLI is available
+        run: ./run.sh fastapi --version
 
       - name: Test command line with arguments
         run: ./run.sh hello
